@@ -1,0 +1,22 @@
+.success {
+    color: green;
+}
+
+.header {
+    background-color: #20232a;
+}
+
+.siteTitle{
+    color: #61dafb !important
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #20232a;
+    color : #61dafb;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}

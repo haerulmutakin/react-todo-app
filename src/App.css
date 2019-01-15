@@ -30,3 +30,16 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: #20232a;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand>img {
+  padding: 7px 14px;
+}
