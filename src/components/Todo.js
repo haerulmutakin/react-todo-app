@@ -1,7 +1,25 @@
 import React from 'react';
 
-const form = {
-    marginTop: '28px'
+const title = {
+    color: '#555'
+}
+const ul = {
+    borderRadius: '0',
+    height: '50px',
+    textAlign: 'left',
+    fontSize: '20px',
+    color: '#555'
+}
+
+const input = {
+    height: '50px',
+    border: 'none',
+    boxShadow: 'none',
+    fontSize: '20px',
+    fontStyle: 'italic',
+    borderBottom: '1px solid #ccc',
+    borderRadius: '0',
+    marginBottom: '10px'
 }
 
 export class Todo extends React.Component {
@@ -11,8 +29,37 @@ export class Todo extends React.Component {
 
         this.state = {
             todo: '',
-            todoList: ['Breakfast', 'Go to office']
+            todoList: ['Take a bath', 'Pray subuh']
         }
+    }
+    render() {
+        return (
+            <div className="container">
+                <div className="col-md-offset-3 col-md-6">
+                    <h3 style={title}>Todo List</h3>
+                    <form onSubmit={this.buttonClickHandler}>
+                        {/* <div className="form-group"> */}
+                        <input type="text" value={this.state.todo} onChange={this.handleTotoChange} className="form-control" style={input} placeholder="Add todo..."/>
+                        {/* </div> */}
+                        {/* <button type="submit" className="btn btn-primary" onClick={this.buttonClickHandler}>Add Todo</button> */}
+                    </form>
+                    
+                    <ul  className="list-group" >
+                        {this.state.todoList.map((todo, i) => 
+                            <li className="list-group-item" key={i} style={ul}>
+                                {todo}
+                                <span className="pull-right">
+                                    <button onClick={() =>  this.handleRemoveClick(i) } className="btn btn-xs btn-success">
+                                        {/* <i className="glyphicon glyphicon-remove"></i> */}
+                                        Done
+                                    </button>
+                                </span>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+            </div>
+        )
     }
 
     handleTotoChange = (event) => {
@@ -23,7 +70,7 @@ export class Todo extends React.Component {
 
     buttonClickHandler = event => {
         this.setState(state => {
-            const list = this.state.todoList.push(this.state.todo)
+            const list = this.state.todoList.unshift(this.state.todo)
             return {
                 list,
                 todo: ''
@@ -40,42 +87,5 @@ export class Todo extends React.Component {
                 todo: ''
             }
         })
-    }
-
-    render() {
-        return (
-            <div className="container">
-                <div className="col-xl-12 col-sm-6">
-                    <div>
-                        <h3>Add Todo</h3>
-                        <div className="well">
-                            <form onSubmit={this.buttonClickHandler}>
-                                <div className="form-group">
-                                    <input type="text" value={this.state.todo} onChange={this.handleTotoChange} className="form-control" />
-                                </div>
-                                <button type="submit" className="btn btn-primary" onClick={this.buttonClickHandler}>Add Todo</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-xl-12 col-sm-6">
-                    <div>
-                        <h3>Todo List</h3>
-                        <ul  className="list-group">
-                            {this.state.todoList.map((todo, i) => 
-                                <li className="list-group-item" key={i}>
-                                    {todo}
-                                    <span className="pull-right">
-                                        <button onClick={() =>  this.handleRemoveClick(i) } className="btn btn-xs btn-danger">
-                                            <i className="glyphicon glyphicon-remove"></i>
-                                        </button>
-                                    </span>
-                                </li>
-                            )}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        )
     }
 }
