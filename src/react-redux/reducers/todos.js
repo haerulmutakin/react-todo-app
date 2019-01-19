@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "../actionTypes";
 
 const initialState = {
   allIds: [],
@@ -16,12 +16,15 @@ export default function(state = initialState, action) {
           ...state.byIds,
           [id]: {
             content,
-            completed: false
+            completed: false,
+            done: ''
           }
         }
       };
     }
     case TOGGLE_TODO: {
+      const date = new Date();
+      const time = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
       const { id } = action.payload;
       return {
         ...state,
@@ -29,10 +32,18 @@ export default function(state = initialState, action) {
           ...state.byIds,
           [id]: {
             ...state.byIds[id],
-            completed: !state.byIds[id].completed
+            completed: !state.byIds[id].completed,
+            done: time
           }
         }
       };
+    }
+    case REMOVE_TODO: {
+      const { id } = action.payload;
+      return {
+        ...state,
+        allIds: [...state.allIds.filter(todo => todo !== id)],
+      }
     }
     default:
       return state;

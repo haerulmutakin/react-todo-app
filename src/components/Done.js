@@ -18,14 +18,15 @@ const todoContiner = {
 }
 const ul = {
     borderRadius: '0',
-    height: '50px',
+    height: '60px',
     textAlign: 'left',
-    fontSize: '20px',
-    color: '#1a1a1a',
+    fontSize: '25px',
+    color: '#555',
     backgroundColor: 'inherit',
     borderColor: '#ff97c0',
     border: 'none',
-    borderBottom: '1px solid #ff97c0'
+    borderBottom: '1px solid green',
+    padding: '10px 5px'
 }
 
 const navigateButton = {
@@ -51,14 +52,16 @@ const Done = ({todos}) =>  (
             <h3 style={title}>DONE LIST HERE</h3>
             <div style={listContainer}>
             <ul  className="list-group" >
-                {todos.map((todo, i) => 
-                    <li className="list-group-item" key={todo.id} style={ul}>
-                        {todo.content}
-                        <span className="pull-right">
-                            <button className="btn btn-xs btn-success">Done at 17:36</button>
-                        </span>
-                    </li>
-                )}
+                {
+                    todos.map((todo, i) => 
+                        <li className="list-group-item" key={todo.id} style={ul}>
+                            {todo.content}
+                            <span className="pull-right">
+                                <button className="btn btn-xs btn-primary">Done at {todo.done}</button>
+                            </span>
+                        </li>
+                    )
+                }
             </ul>
             </div>
         </div>

@@ -7,8 +7,8 @@ const input = {
     border: 'none',
     boxShadow: 'none',
     fontSize: '20px',
-    fontStyle: 'italic',
-    borderBottom: '1px solid #1a1a1a',
+    borderBottom: '1px solid green',
+    fontWeight: 'bold',
     borderRadius: '0',
     marginBottom: '10px',
     backgroundColor: 'inherit'
@@ -34,7 +34,13 @@ class AddTodo extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleAddTodo}>
-                <input type="text" value={this.state.input} onChange={(e) => this.updateInput(e.target.value)} className="form-control" style={input} placeholder="Add todo..."/>
+                <input 
+                    type="text"
+                    value={this.state.input}
+                    onChange={(e) => this.updateInput(e.target.value)}
+                    className="form-control"
+                    style={input} placeholder="Add todo..."
+                />
             </form>
         )
     }
