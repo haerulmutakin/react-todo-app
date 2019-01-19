@@ -3,9 +3,9 @@ import styles from './../../stylesheets/main.module.css';
 
 function Footer()  {
     return (
-        <footer className={styles.footer}>
+        <div className={styles.footer}>
             <p>Todo App Created with Love</p>
-        </footer>
+        </div>
     )
 }
 

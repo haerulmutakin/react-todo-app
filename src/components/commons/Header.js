@@ -1,20 +1,22 @@
 import React from 'react';
 import logo from './../../logo.svg'
 import {Navbar } from 'react-bootstrap';
-// MenuItem
-// NavDropdown
-// NavItem
-// Nav
+import { Link } from 'react-router-dom';
+const appTitle = {
+    fontSize: '24px',
+    color: '#01ddff',
+    fontWeight: 'bold'
+}
 export class Header extends React.Component {
     render() {
         return (
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                    <a href="#home">
-                        <img src={logo} alt="" width="80" height="80"/>
-                        React Todo App
-                    </a>
+                    <Link to="/">
+                        <img src={logo} alt="" />
+                        <span style={appTitle}>React Love</span>
+                    </Link>
                     </Navbar.Brand>
                 </Navbar.Header>
                 {/* <Nav>
