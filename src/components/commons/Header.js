@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './../../logo.svg'
-import {Navbar } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 const appTitle = {
     fontSize: '24px',
@@ -20,15 +20,8 @@ export class Header extends React.Component {
                     </Navbar.Brand>
                 </Navbar.Header>
                 {/* <Nav>
-                    <NavItem eventKey={1} href="#">Link</NavItem>
-                    <NavItem eventKey={2} href="#">Link</NavItem>
-                    <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                    <MenuItem eventKey={3.1}>Action</MenuItem>
-                    <MenuItem eventKey={3.2}>Another action</MenuItem>
-                    <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                    <MenuItem divider />
-                    <MenuItem eventKey={3.4}>Separated link</MenuItem>
-                    </NavDropdown>
+                    <NavItem eventKey={1} href="#">Todo</NavItem>
+                    <NavItem eventKey={2} href="#">Done</NavItem>
                 </Nav> */}
             </Navbar>
         )

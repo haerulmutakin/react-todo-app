@@ -7,8 +7,9 @@ const input = {
     border: 'none',
     boxShadow: 'none',
     fontSize: '20px',
-    borderBottom: '1px solid green',
+    borderBottom: '1px solid #453e3c',
     fontWeight: 'bold',
+    color: '#efeae7',
     borderRadius: '0',
     marginBottom: '10px',
     backgroundColor: 'inherit'

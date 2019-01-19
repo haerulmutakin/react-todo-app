@@ -8,44 +8,47 @@ import { VISIBILITY_FILTERS } from "../react-redux/reducers/constant";
 import AddTodo from './AddTodo'
 
 const title = {
-    color: '#1a1a1a',
+    color: '#efeae7',
     fontWeight: 'bold',
     fontFamily: 'BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif'
 }
 const todoContiner = {
-    backgroundColor: '#efc95a',
+    backgroundColor: '#525252',
     marginTop: '30px',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    paddingTop: '10px',
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
 }
 const ul = {
     borderRadius: '0',
     height: '60px',
     textAlign: 'left',
     fontSize: '25px',
-    color: '#555',
+    color: '#efeae7',
     backgroundColor: 'inherit',
     borderColor: '#ff97c0',
     border: 'none',
-    borderBottom: '1px solid green',
+    borderBottom: '1px solid #453e3c',
     padding: '10px 5px'
 }
 const navigateButton = {
     backgroundColor: 'inherit',
     border: 'none',
-    marginTop: '20px',
+    fontWeight: 'bold',
+    margin: '20px 0 20px 0',
     
 }
 const removeButton = {
     cursor: 'pointer'
 }
 const listContainer = {
-    height: '470px',
+    minHeight: '470px',
+    paddingBottom: '10px'
 }
 
 const noTodo = {
     fontSize: '20px',
-    marginTop: '90px'
+    marginTop: '90px',
+    color: '#efeae7'
 }
 
 const mapStateToProps = state => {

@@ -5,15 +5,14 @@ import { getTodosByVisibilityFilter } from "../react-redux/selector";
 import { VISIBILITY_FILTERS } from "../react-redux/reducers/constant";
 
 const title = {
-    color: '#1a1a1a',
+    color: '#efeae7',
     fontWeight: 'bold',
     fontFamily: 'BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif'
 }
 const todoContiner = {
-    backgroundColor: '#ff9bbc',
+    backgroundColor: '#525252',
     marginTop: '30px',
-    // height: '600px',
-    borderRadius: '10px',
+    paddingTop: '10px',
     boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
 }
 const ul = {
@@ -21,11 +20,11 @@ const ul = {
     height: '60px',
     textAlign: 'left',
     fontSize: '25px',
-    color: '#555',
+    color: '#efeae7',
     backgroundColor: 'inherit',
     borderColor: '#ff97c0',
     border: 'none',
-    borderBottom: '1px solid green',
+    borderBottom: '1px solid #453e3c',
     padding: '10px 5px'
 }
 
@@ -33,7 +32,7 @@ const navigateButton = {
     backgroundColor: 'inherit',
     border: 'none',
     marginTop: '20px',
-    
+    fontWeight: 'bold'
 }
 
 const listContainer = {
@@ -49,7 +48,7 @@ const mapStateToProps = state => {
 const Done = ({todos}) =>  (
     <div className="container">
         <div style={todoContiner} className="col-md-offset-3 col-md-6">
-            <h3 style={title}>DONE LIST HERE</h3>
+            <h3 style={title}>DONE LIST</h3>
             <div style={listContainer}>
             <ul  className="list-group" >
                 {
@@ -57,7 +56,7 @@ const Done = ({todos}) =>  (
                         <li className="list-group-item" key={todo.id} style={ul}>
                             {todo.content}
                             <span className="pull-right">
-                                <button className="btn btn-xs btn-primary">Done at {todo.done}</button>
+                                <button className="btn btn-xs btn-warning">Done at {todo.done}</button>
                             </span>
                         </li>
                     )
