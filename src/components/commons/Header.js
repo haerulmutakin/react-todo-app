@@ -15,7 +15,7 @@ export class Header extends React.Component {
                     <Navbar.Brand>
                     <Link to="/">
                         <img src={logo} alt="" />
-                        <span style={appTitle}>React Love</span>
+                        <span style={appTitle}>React Todo</span>
                     </Link>
                     </Navbar.Brand>
                 </Navbar.Header>
